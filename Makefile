@@ -26,7 +26,7 @@ migrate-action:
 	@docker compose run --rm taskflow-postgres-migrate \
 		-path /migrations \
 		-database postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@taskflow-postgres:5432/${POSTGRES_DB}?sslmode=disable \
-		"$(action)"
+		$(action)
 //make migrate-action action="down 1"
 
 # "postgres://test-user-123:test-postgres-password-456@taskflow-postgres:5432/test-db?sslmode=disable"
